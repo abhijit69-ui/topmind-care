@@ -49,7 +49,7 @@ const FAQ = () => {
             <div key={index}>
               {/* Question */}
               <button
-                className='w-full text-left px-6 py-4 font-bold text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center'
+                className='cursor-pointer w-full text-left px-6 py-4 font-bold text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center'
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}

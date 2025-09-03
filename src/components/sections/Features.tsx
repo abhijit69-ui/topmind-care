@@ -32,7 +32,7 @@ const features: FeatureRow[] = [
 const Features = () => {
   return (
     <>
-      <section className='w-full py-16'>
+      <section id='features' className='w-full py-16'>
         <h2 className='text-3xl sm:text-4xl font-bold font-primary mb-10'>
           Why Choose Mindery Kids Over Others?
         </h2>

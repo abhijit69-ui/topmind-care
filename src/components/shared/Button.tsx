@@ -1,12 +1,14 @@
 interface Props {
   children: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset';
   className?: string;
   onClick?: () => void;
 }
 
-const Button = ({ children, className = '', onClick }: Props) => {
+const Button = ({ children, type, className = '', onClick }: Props) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`text-white px-5 py-2 rounded-xl shadow-md transition-colors font-medium font-secondary ${className} cursor-pointer`}
     >

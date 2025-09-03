@@ -37,7 +37,9 @@ const MobileMenu = () => {
                     key={key}
                     className='p-1.5 text-xl font-bold font-primary text-violet hover:text-violet/70'
                   >
-                    <a href={item.href}>{item.label}</a>
+                    <a href={item.href} onClick={() => setMenuOpen(false)}>
+                      {item.label}
+                    </a>
                   </li>
                 ))}
               </ul>

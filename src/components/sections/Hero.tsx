@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { SlideRight } from '../../utils/animation';
 import Badge from '../shared/Badge';
 import Button from '../shared/Button';
 import heroImg from '/assets/images/hero-img.jpg';
 import { motion } from 'motion/react';
+import FormModal from '../elements/FormModal';
 
 const features = [
   { emoji: '🧠', label: 'Improves', value: 'Focus' },
@@ -12,6 +14,8 @@ const features = [
 ];
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className='relative pt-32 pb-16 md:pb-24'>
       <div className='grid md:grid-cols-2 gap-10 items-center'>
@@ -49,18 +53,21 @@ const Hero = () => {
             className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start max-w-xs mx-auto sm:max-w-none sm:mx-0'
           >
             <Button
-              onClick={() => {}}
+              onClick={() => setIsModalOpen(true)}
               className='bg-violet hover:bg-violet-800 text-sm md:text-base'
             >
               Start Free Trial
             </Button>
-            <Button
-              onClick={() => {}}
-              className='bg-green hover:bg-green-600 text-sm md:text-base'
-            >
+            <Button className='bg-green hover:bg-green-600 text-sm md:text-base'>
               Explore Programs
             </Button>
           </motion.div>
+
+          {/* Modal */}
+          <FormModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
 
           {/* Featured Cards */}
           <motion.div

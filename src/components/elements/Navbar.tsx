@@ -6,7 +6,7 @@ import logo from '/assets/logo-tm.png';
 
 const Navbar = () => {
   return (
-    <header className='absolute inset-x-0 top-0 z-50 py-4 border border-gray-200'>
+    <header className='fixed inset-x-0 top-0 z-50 py-4 bg-white/70 backdrop-blur-md border border-gray-200'>
       <Container>
         <nav className='flex items-center justify-between'>
           {/* Logo */}
