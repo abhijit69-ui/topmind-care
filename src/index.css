@@ -4,4 +4,7 @@
 @theme {
   --font-primary: 'Nunito', sans-serif;
   --font-secondary: 'Inter', sans-serif;
+
+  --color-violet: #7c3aed;
+  --color-green: #22c55e;
 }
