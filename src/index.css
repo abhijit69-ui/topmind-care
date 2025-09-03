@@ -8,3 +8,7 @@
   --color-violet: #7c3aed;
   --color-green: #22c55e;
 }
+
+html {
+  scroll-behavior: smooth;
+}

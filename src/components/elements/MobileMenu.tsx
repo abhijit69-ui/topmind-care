@@ -3,6 +3,7 @@ import { navItems } from '../shared/NavItems';
 import BtnLink from '../shared/BtnLink';
 import NavBtn from './NavBtn';
 import { AnimatePresence, motion } from 'motion/react';
+import { Link } from 'react-scroll';
 
 const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ const MobileMenu = () => {
   return (
     <div className='md:hidden relative block'>
       <NavBtn menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -20,7 +22,7 @@ const MobileMenu = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setMenuOpen(false)}
-              className='fixed inset-0 bg-black/30 backdrop-blur-sm z-10'
+              className='fixed inset-0 h-screen bg-black/30 backdrop-blur-sm z-50'
             />
 
             {/* Menu */}
@@ -29,7 +31,7 @@ const MobileMenu = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
               transition={{ duration: 0.5, type: 'spring' }}
-              className='absolute -top-2 -right-2 w-64 min-h-full rounded-md bg-neutral-50 p-8 z-10 flex flex-col origin-top-right'
+              className='absolute -top-2 -right-2 z-[60] w-64 min-h-full rounded-md bg-neutral-50 p-8 flex flex-col origin-top-right'
             >
               <ul className='flex flex-col gap-2 flex-1 mb-2'>
                 {navItems.map((item, key) => (
@@ -37,9 +39,16 @@ const MobileMenu = () => {
                     key={key}
                     className='p-1.5 text-xl font-bold font-primary text-violet hover:text-violet/70'
                   >
-                    <a href={item.href} onClick={() => setMenuOpen(false)}>
+                    <Link
+                      to={item.href.replace('#', '')}
+                      smooth={true}
+                      offset={-80}
+                      duration={600}
+                      spy={true}
+                      onClick={() => setMenuOpen(false)}
+                    >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

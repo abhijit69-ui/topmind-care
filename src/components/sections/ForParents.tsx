@@ -9,17 +9,17 @@ const ForParents = () => {
         subtitle='Practical guides, printable routines, and progress insights so you can support midfulness at home and school.'
       >
         <BtnLink
-          className='hover:bg-violet-50 border border-gray-300 font-black text-violet'
+          className='hover:bg-violet-50 border bg-white border-gray-300 font-black text-violet'
           href='/'
           label='📩 Download Starter Kit (PDF)'
         />
         <BtnLink
-          className='hover:bg-violet-50 border border-gray-300 font-black text-violet'
+          className='hover:bg-violet-50 border bg-white border-gray-300 font-black text-violet'
           href='/'
-          label='🗓️ &-Day Calm Plan'
+          label='🗓️ 7-Day Calm Plan'
         />
         <BtnLink
-          className='hover:bg-violet-50 border border-gray-300 font-black text-violet'
+          className='hover:bg-violet-50 border bg-white border-gray-300 font-black text-violet'
           href='/'
           label='🏫 Classroom Pack'
         />

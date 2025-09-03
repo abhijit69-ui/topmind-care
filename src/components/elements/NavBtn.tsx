@@ -39,7 +39,7 @@ const NavBtn = ({ menuOpen, setMenuOpen }: NavMenuToggleProps) => {
   return (
     <div
       onClick={() => setMenuOpen(!menuOpen)}
-      className='relative justify-self-center flex flex-col gap-2 p-1.5 rounded cursor-pointer bg-violet stroke-white stroke-2 z-50'
+      className='relative justify-self-center flex flex-col gap-2 p-1.5 rounded cursor-pointer bg-violet stroke-white stroke-2 z-[70]'
     >
       <svg width='24' height='24' viewBox='0 0 24 24'>
         <motion.path

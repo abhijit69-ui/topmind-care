@@ -3,6 +3,7 @@ import BtnLink from '../shared/BtnLink';
 import { navItems } from '../shared/NavItems';
 import MobileMenu from './MobileMenu';
 import logo from '/assets/logo-tm.png';
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   return (
@@ -10,22 +11,34 @@ const Navbar = () => {
       <Container>
         <nav className='flex items-center justify-between'>
           {/* Logo */}
-          <a href='/' className='flex items-center gap-2'>
+          <Link
+            to='hero'
+            smooth={true}
+            duration={600}
+            offset={-80}
+            className='flex items-center gap-2 cursor-pointer'
+          >
             <img src={logo} alt='topmind logo' className='w-10 h-10' />
+
             <span className='text-lg font-primary font-bold'>Topmind Care</span>
-          </a>
+          </Link>
 
           {/* Nav Items */}
           <div className='hidden md:flex items-center gap-8 font-bold font-primary'>
             <ul className='flex items-center gap-6 text-sm  text-violet'>
               {navItems.map((item, key) => (
                 <li key={key}>
-                  <a
-                    href={item.href}
-                    className='hover:text-violet-800 transition-colors'
+                  <Link
+                    to={item.href.replace('#', '')}
+                    smooth={true}
+                    offset={-80}
+                    duration={600}
+                    spy={true}
+                    activeClass='text-violet-800 border-b-2 border-violet-800'
+                    className='hover:text-violet-800 transition-colors cursor-pointer'
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

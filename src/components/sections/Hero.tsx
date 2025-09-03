@@ -5,6 +5,7 @@ import Button from '../shared/Button';
 import heroImg from '/assets/images/hero-img.jpg';
 import { motion } from 'motion/react';
 import FormModal from '../elements/FormModal';
+import BtnLink from '../shared/BtnLink';
 
 const features = [
   { emoji: '🧠', label: 'Improves', value: 'Focus' },
@@ -17,7 +18,7 @@ const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className='relative pt-32 pb-16 md:pb-24'>
+    <section id='hero' className='relative pt-32 pb-16 md:pb-24'>
       <div className='grid md:grid-cols-2 gap-10 items-center'>
         <div className='text-center md:text-left space-y-3'>
           <motion.span
@@ -58,9 +59,11 @@ const Hero = () => {
             >
               Start Free Trial
             </Button>
-            <Button className='bg-green hover:bg-green-600 text-sm md:text-base'>
-              Explore Programs
-            </Button>
+            <BtnLink
+              className='text-white font-semibold bg-green hover:bg-green-600 text-sm md:text-base'
+              href='/'
+              label='Download App'
+            />
           </motion.div>
 
           {/* Modal */}
