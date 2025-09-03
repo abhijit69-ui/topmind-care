@@ -6,12 +6,14 @@ type CardProps = {
   title: string;
   description: string;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export default function Card({
   badge,
   title,
   description,
+  children,
   className = '',
 }: CardProps) {
   return (
@@ -24,8 +26,9 @@ export default function Card({
       className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-sm ${className}`}
     >
       {badge && <div className='mb-2'>{badge}</div>}
-      <h3 className='text-lg font-primary font-bold text-gray-900'>{title}</h3>
+      <h2 className='text-lg font-primary font-bold text-gray-900'>{title}</h2>
       <p className='mt-1.5 text-sm font-medium text-gray-700'>{description}</p>
+      {children}
     </motion.div>
   );
 }
