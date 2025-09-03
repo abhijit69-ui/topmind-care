@@ -1,22 +1,31 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 type CardProps = {
+  badge?: React.ReactNode; // optional
   title: string;
   description: string;
   className?: string;
-  children?: React.ReactNode; // for optional badge or other extras
 };
 
-const Card = ({ title, description, className = '', children }: CardProps) => {
+export default function Card({
+  badge,
+  title,
+  description,
+  className = '',
+}: CardProps) {
   return (
-    <div
-      className={`rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition ${className}`}
+    <motion.div
+      whileHover={{
+        scale: 1.03,
+        boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
+      }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-sm ${className}`}
     >
-      {children && <div className='mb-2'>{children}</div>}
-      <h3 className='text-lg font-semibold text-gray-900'>{title}</h3>
-      <p className='mt-1 text-sm text-gray-600'>{description}</p>
-    </div>
+      {badge && <div className='mb-2'>{badge}</div>}
+      <h3 className='text-lg font-primary font-bold text-gray-900'>{title}</h3>
+      <p className='mt-1.5 text-sm font-medium text-gray-700'>{description}</p>
+    </motion.div>
   );
-};
-
-export default Card;
+}
