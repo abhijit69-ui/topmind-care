@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 
 type CardProps = {
   badge?: React.ReactNode; // optional
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   className?: string;
   children?: React.ReactNode;
 };
@@ -23,7 +23,7 @@ export default function Card({
         boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-sm ${className}`}
+      className={`rounded-2xl border border-gray-200 bg-white px-6 py-6 shadow-sm ${className}`}
     >
       {badge && <div className='mb-2'>{badge}</div>}
       <h2 className='text-lg font-primary font-bold text-gray-900'>{title}</h2>
