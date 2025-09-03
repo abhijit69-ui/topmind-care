@@ -1,7 +1,7 @@
 import { SlideRight } from '../../utils/animation';
 import Badge from '../shared/Badge';
 import Button from '../shared/Button';
-import heroImg from '/public/assets/images/hero-img.jpg';
+import heroImg from '/assets/images/hero-img.jpg';
 import { motion } from 'motion/react';
 
 const features = [
@@ -67,7 +67,7 @@ const Hero = () => {
             variants={SlideRight(1.2)}
             initial='hidden'
             animate='visible'
-            className='hidden sm:grid grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto font-primary'
+            className='hidden lg:grid grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto font-primary'
           >
             {features.map((item, key) => (
               <div
