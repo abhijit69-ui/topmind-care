@@ -12,12 +12,12 @@ export default function Badge({
   className = '',
 }: BadgeProps) {
   const baseStyles =
-    'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-primary';
+    'inline-flex items-center px-4 py-2 rounded-full text-sm font-bold font-primary';
 
   const variants: Record<typeof variant, string> = {
     violet: 'bg-violet-100 text-violet-700',
     green: 'bg-green-100 text-green-700',
-    gray: 'bg-gray-200 text-gray-800',
+    gray: 'bg-gray-100 border border-gray-300 text-gray-800',
   };
 
   return (

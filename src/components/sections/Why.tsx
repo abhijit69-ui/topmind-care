@@ -21,7 +21,7 @@ const Why = () => {
   ];
 
   return (
-    <section id='why' className='py-20'>
+    <section id='why' className='py-16'>
       <div className='text-left max-w-xl mb-12'>
         <h2 className='text-3xl md:text-4xl font-bold font-primary text-gray-900'>
           Why Mindery Kids?
