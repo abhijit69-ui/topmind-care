@@ -34,7 +34,7 @@ const Navbar = () => {
             <BtnLink
               label='Start Free'
               href='#cta'
-              className='bg-violet hover:bg-violet-800 text-white px-5 py-2 rounded-xl shadow-md transition'
+              className='bg-violet hover:bg-violet-800 text-white'
             />
           </div>
 

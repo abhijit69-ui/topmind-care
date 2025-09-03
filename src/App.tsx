@@ -1,5 +1,6 @@
 import Layout from './components/Layout';
 import Features from './components/sections/Features';
+import ForParents from './components/sections/ForParents';
 import Hero from './components/sections/Hero';
 import Programs from './components/sections/Programs';
 import Why from './components/sections/Why';
@@ -11,6 +12,7 @@ const App = () => {
       <Why />
       <Programs />
       <Features />
+      <ForParents />
     </Layout>
   );
 };
