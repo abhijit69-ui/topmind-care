@@ -1,6 +1,8 @@
+import { SlideRight } from '../../utils/animation';
 import Badge from '../shared/Badge';
 import Button from '../shared/Button';
 import heroImg from '/public/assets/images/hero-img.jpg';
+import { motion } from 'motion/react';
 
 const features = [
   { emoji: '🧠', label: 'Improves', value: 'Focus' },
@@ -14,17 +16,38 @@ const Hero = () => {
     <section className='relative pt-32 pb-16 md:pb-24'>
       <div className='grid md:grid-cols-2 gap-10 items-center'>
         <div className='text-center md:text-left space-y-3'>
-          <Badge variant='violet'>🌈Calm Minds, Happy Hearts</Badge>
-          <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold font-primary leading-tight tracking-tighter md:tracking-normal'>
+          <motion.span
+            variants={SlideRight(0.4)}
+            initial='hidden'
+            animate='visible'
+          >
+            <Badge variant='violet'>🌈Calm Minds, Happy Hearts</Badge>
+          </motion.span>
+          <motion.h1
+            variants={SlideRight(0.6)}
+            initial='hidden'
+            animate='visible'
+            className='text-3xl md:text-5xl lg:text-6xl font-bold font-primary leading-tight tracking-tighter md:tracking-normal'
+          >
             Mindfulness & Meditation for Kids (4-14)
-          </h1>
-          <p className='font-secondary text-gray-700 md:text-gray-600 max-w-xl mx-auto md:mx-0'>
+          </motion.h1>
+          <motion.p
+            variants={SlideRight(0.8)}
+            initial='hidden'
+            animate='visible'
+            className='font-secondary text-gray-700 md:text-gray-600 max-w-xl mx-auto md:mx-0'
+          >
             Fun, story-based meditations that build focus, kindness, and
             confidence. Safe, ad-free, and crafted with child-development
             experts.
-          </p>
+          </motion.p>
 
-          <div className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start max-w-xs mx-auto sm:max-w-none sm:mx-0'>
+          <motion.div
+            variants={SlideRight(1.0)}
+            initial='hidden'
+            animate='visible'
+            className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start max-w-xs mx-auto sm:max-w-none sm:mx-0'
+          >
             <Button
               onClick={() => {}}
               className='bg-violet hover:bg-violet-800 text-sm md:text-base'
@@ -37,10 +60,15 @@ const Hero = () => {
             >
               Explore Programs
             </Button>
-          </div>
+          </motion.div>
 
           {/* Featured Cards */}
-          <div className='hidden sm:grid grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto font-primary'>
+          <motion.div
+            variants={SlideRight(1.2)}
+            initial='hidden'
+            animate='visible'
+            className='hidden sm:grid grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto font-primary'
+          >
             {features.map((item, key) => (
               <div
                 key={key}
@@ -57,17 +85,24 @@ const Hero = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Image + floating card */}
-        <div className='relative'>
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: 'spring', stiffness: 100, delay: 0.2 }}
+          className='relative'
+        >
           {/* hero image */}
-          <div className='w-full rounded-md overflow-hidden'>
-            <img
+          <div className='w-full rounded-lg overflow-hidden'>
+            <motion.img
               src={heroImg}
               alt='a meditating kid'
-              className='object-cover'
+              className='object-cover w-full h-full'
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
             />
           </div>
 
@@ -82,7 +117,7 @@ const Hero = () => {
               <li>🌙 Sleep Story: Star Boat (7 min)</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
