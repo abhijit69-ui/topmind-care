@@ -1,69 +1,47 @@
-# React + TypeScript + Vite
+# Topmind Care Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Add your project screenshot here -->
+<img width="1899" height="905" alt="image" src="https://github.com/user-attachments/assets/a302d101-f71c-4fd8-a9e9-bba3ef95935d" />
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview
+Topmind Care is a responsive landing page built as part of an assignment project for an internship application.  
+The website showcases mindfulness and meditation programs for kids, featuring reusable components, smooth animations, and mobile-first design.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
+- **React (with TypeScript)** – component-based UI
+- **Tailwind CSS** – utility-first styling
+- **Framer Motion** – animations and transitions
+- **React Scroll** – smooth scrolling navigation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ✨ Features
+- 🎨 Responsive design optimized for all devices  
+- 📌 Sticky navbar with smooth scrolling and active link highlighting  
+- 📂 Reusable components (cards, accordions, modals, containers)  
+- 🖼 Gradient sections, pricing tables, and testimonial cards  
+- 🔒 Mobile menu with animated open/close toggle  
+- 📨 Popup form modal for collecting trial requests  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+- Node.js (>= 18.x recommended)
+- npm or yarn
+
+### Installation
+```bash
+# Clone repo
+git clone https://github.com/yourusername/topmind-care.git
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
