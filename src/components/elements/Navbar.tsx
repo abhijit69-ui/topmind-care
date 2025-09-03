@@ -14,7 +14,7 @@ const Navbar = () => {
           <Link
             to='hero'
             smooth={true}
-            duration={600}
+            duration={1000}
             offset={-80}
             className='flex items-center gap-2 cursor-pointer'
           >
@@ -32,7 +32,7 @@ const Navbar = () => {
                     to={item.href.replace('#', '')}
                     smooth={true}
                     offset={-80}
-                    duration={600}
+                    duration={900}
                     spy={true}
                     activeClass='text-violet-800 border-b-2 border-violet-800'
                     className='hover:text-violet-800 transition-colors cursor-pointer'

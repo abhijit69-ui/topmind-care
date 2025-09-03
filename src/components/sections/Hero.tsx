@@ -5,7 +5,7 @@ import Button from '../shared/Button';
 import heroImg from '/assets/images/hero-img.jpg';
 import { motion } from 'motion/react';
 import FormModal from '../elements/FormModal';
-import BtnLink from '../shared/BtnLink';
+import { Link } from 'react-scroll';
 
 const features = [
   { emoji: '🧠', label: 'Improves', value: 'Focus' },
@@ -59,11 +59,16 @@ const Hero = () => {
             >
               Start Free Trial
             </Button>
-            <BtnLink
-              className='text-white font-semibold bg-green hover:bg-green-600 text-sm md:text-base'
-              href='/'
-              label='Download App'
-            />
+            <Link
+              className='px-5 py-2 rounded-xl shadow-md transform transition-transform duration-300
+                    hover:scale-105 text-white font-semibold bg-green hover:bg-green-600 text-sm md:text-base'
+              to='programs'
+              smooth={true}
+              duration={900}
+              offset={-80}
+            >
+              Explore Programs
+            </Link>
           </motion.div>
 
           {/* Modal */}

@@ -46,7 +46,7 @@ const FormModal = ({ isOpen, onClose }: FormModalProps) => {
         <>
           {/* Backdrop */}
           <motion.div
-            className='fixed inset-0 bg-black/40 backdrop-blur-sm z-40'
+            className='fixed h-screen inset-0 bg-black/40 backdrop-blur-sm z-40'
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -43,7 +43,7 @@ const MobileMenu = () => {
                       to={item.href.replace('#', '')}
                       smooth={true}
                       offset={-80}
-                      duration={600}
+                      duration={900}
                       spy={true}
                       onClick={() => setMenuOpen(false)}
                     >
