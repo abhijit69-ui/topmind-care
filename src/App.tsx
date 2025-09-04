@@ -7,8 +7,11 @@ import Hero from './components/sections/Hero';
 import Programs from './components/sections/Programs';
 import Testimonial from './components/sections/Testimonial';
 import Why from './components/sections/Why';
+import useSmoothScroll from './hooks/useSmoothScroll';
 
 const App = () => {
+  useSmoothScroll();
+
   return (
     <Layout title='Topmind Care'>
       <Hero />
